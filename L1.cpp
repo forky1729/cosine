@@ -1,45 +1,3 @@
-/*
-//очень неудачная попытка сделать экспоненту... 
-
-#include <iostream>
-#include <cmath>
-#include <iomanip>
-
-double step(double x, int i)
-{
-    double res=1.;
-    for (int k=1; k<=i; ++k)
-    {
-        res*=x;
-    }
-    return res;
-}
-
-double function(double x)
-{
-    double exp = 0;
-    for (int i=0; i<100; ++i)
-    {
-        double fctrl = 1;
-        for (int j=1; j<=i; ++j)
-            fctrl*=j;
-        exp+=step(x,i)/fctrl;
-    }
-    return exp;
-}
-
-int main()
-{
-    double x;
-    std::cin >> x;
-    std::cout << std::setprecision(16);
-    std::cout << function(x) << std::endl;
-    std::cout << std::exp(x) << std::endl;
-}
-*/
-
-
-
 //косинус
 
 #include <iostream>
@@ -47,33 +5,34 @@ int main()
 #include <iomanip>
 #include <numbers>
 
+const double pi = std::numbers::pi;
+
 
 double fact(double x)                                             //факториал числа
 {
     double res;
-    if (x==0)
-        res=1;
+    if (x == 0)
+        res = 1;
     else
     {
-        res=1;
-        for (int i=1; i<=x; ++i)
-            res*=i;
+        res = 1;
+        for (int i = 1; i <= x; ++i)
+            res *= i;
     }
     return res;
 }
+
 
 double step(double x, int i)                                      //возведение в степень
 {
-    double res=1.;
-    for (int k=1; k<=i; ++k)
+    double res = 1.;
+    for (int k = 1; k <= i; ++k)
     {
-        res*=x;
+        res *= x;
     }
     return res;
 }
 
-//const double pi = std::numbers::pi;                           --- почему-то ругается на numbers
-const double pi = 3.141592653589793238462;
 
 double Cos1(double x)                                            //без использовния функций
 {
@@ -100,6 +59,7 @@ double Cos2(double x)                                           //через в�
     }
     return cos;
 }
+
 
 int main()
 {
