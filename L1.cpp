@@ -41,8 +41,13 @@ double Cos1(double x)                                            //без исп
     double slug = 1;
     for (int i = 1; i < 100; ++i)
     {
-        slug *= (-1 * x * x) / ((2 * i) * (2 * i - 1));
-        cos += slug;
+        if (slug > 0.000000000000001 or slug < -0.000000000000001)
+        {
+            slug *= (-1 * x * x) / ((2 * i) * (2 * i - 1));
+            cos += slug;
+        }
+        else
+            break;
     }
     return cos;
 }
